@@ -1,2 +1,92 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+#Desarrollo 1
+	#Valores a ordenar
+	
+
+	x <- c(53,10,87,1)#números
+	x <-sort(x, decreasing=FALSE) #Función
+	x #Resultado
+	
+
+	#desarrollo ejercicio 2
+	
+
+	#Función para mover el robot
+	fuerza <- function(f){
+	  if (f==1){
+	    print("avanzar")
+	  }else if (f==2){
+	    print("retroceder")
+	  }else if(f==3){
+	    print("Doblar a la derecha")
+	  }else if(f==4){
+	    print("doblar a la izquierda")
+	  } else {
+	    print("robot no se moverá")
+	  }
+	}
+	#Si queremos que el robot avance
+	fuerza(1)
+	#Si queremos que el robot retroceda
+	fuerza(2)
+	#Si queremos que el robot doble a la derecha
+	fuerza(3)
+	#Si queremos que el robot doble a la izquierda
+	fuerza(4)
+	#Si el robot realiza una fuerza que no es la adecuada
+	fuerza(5)
+	#El robot no se moverá
+	
+
+	#Desarrollo ejercicio 3
+	#La empresa Dublín S.A especializada en la fabricación de puertas
+	#realizara un cambio de tecnología, puesto que, sus máquinas ya están obsoletas.
+	# Dos empresas dedicadas a la automatización le presentan maquinas diferentes
+	#para la nueva inversión que estos deben realizar. La empresa Dublín tiene cinco
+	# variables para poder comparar a cada una de las máquinas y ver cuál de las dos 
+	#les conviene más, según el rango en el que se encuentre la maquina se le dará 
+	#cierta cantidad de puntaje, la máquina que posea el mejor puntaje será la mejor
+	# opción de compra para la empresa Dublín S.A. Las variables para evaluar son 
+	#las siguientes:
+	#Precio, producción por hora, calidad, precisión y costo de mantenimiento
+	
+
+	#FUNCIÓN PARA LA SELECCIÓN DE LA MAQUINA
+	cambio <-function(P,PH,CA,PR,MT){
+	  acu=0
+	  if (P<2100000){
+	    acu=acu+20
+	  }else if(P>=2100000 && P<2600000){
+	    acu=acu+10
+	  }
+	  if (PH>5){
+	    acu=acu+20
+	  }else if(PH <= 4 && PH >=2){
+	    acu=acu+10
+	  }
+	  if (CA>97)#PORCENTAJE OBTENIDO DE LA PRUEBA DE CALIDAD#
+	  {acu=acu+20
+	  }else{
+	    acu=acu+10
+	  }
+	  if (PR>95){
+	    acu=acu+20
+	  }else{
+	    acu=acu+10
+	  }
+	  if (MT<=250000){
+	    acu=acu+20
+	  }else{
+	    acu=acu+10
+	  }
+	  if (acu<=100 && acu>=90){
+	    print(acu)
+	    print("se recomienda la compra")
+	  }else{
+	    print(acu) #PUNTAJE OBTENIDO
+	    print("no se recomienda la compra")
+	  }
+	  
+	}
+	cambio(1000000,6,98,96,200000) #Empresa 1
+	cambio(2100000,2,94,90,300000) #Empresa 2
+
